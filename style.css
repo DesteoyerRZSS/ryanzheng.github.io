@@ -1,0 +1,52 @@
+.imageplaceholder{
+    /*display: inline-block;*/
+    background-color: chartreuse;
+
+    /*padding: 20px;
+    width: 33%;
+    height:120px;*/
+    grid-area: image;
+    padding: 20px;
+}
+.imageplaceholder img{
+    width: 70%;
+    height: 70%
+}
+.layout{
+    grid-area: main;
+    /*display:flexbox;*/
+    background-color: aqua;
+    /*padding: 20px;*/
+   /* width: 66%*/
+}
+.header{
+    grid-area: header;
+}
+.right{
+    grid-area: side;
+}
+.footer{
+    grid-area: footer;
+}
+.repoInfo{
+    background-color: rgb(43, 41, 41);
+}
+h1 {
+
+}
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    'header header header header header header'
+    'image main main main main side'
+    'image footer footer footer footer footer';
+    gap: 10px;
+    background-color: rgb(43, 41, 41);
+    padding: 10px;
+}
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
