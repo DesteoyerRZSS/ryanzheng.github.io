@@ -1,52 +1,83 @@
-.imageplaceholder{
-    /*display: inline-block;*/
-    background-color: chartreuse;
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #1E1F2F;
+    font-family: 'Segoe UI', sans-serif;
+    color: #F4F4F9;
+}
 
-    /*padding: 20px;
-    width: 33%;
-    height:120px;*/
-    grid-area: image;
-    padding: 20px;
-}
-.imageplaceholder img{
-    width: 70%;
-    height: 70%
-}
-.layout{
-    grid-area: main;
-    /*display:flexbox;*/
-    background-color: aqua;
-    /*padding: 20px;*/
-   /* width: 66%*/
-}
-.header{
-    grid-area: header;
-}
-.right{
-    grid-area: side;
-}
-.footer{
-    grid-area: footer;
-}
-.repoInfo{
-    background-color: rgb(43, 41, 41);
-}
-h1 {
-
-}
-.grid-container{
+.container {
     display: grid;
     grid-template-areas:
-    'header header header header header header'
-    'image main main main main side'
-    'image footer footer footer footer footer';
-    gap: 10px;
-    background-color: rgb(43, 41, 41);
-    padding: 10px;
+        "info header header"
+        "info projects projects"
+        "info projects projects";
+    grid-template-columns: 2.5fr 4fr 3.5fr;
+    grid-template-rows: 1fr 9fr;
+    height: 100%;
 }
-.grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
+
+.container > div {
+    padding: 1px;
+    margin: 1px;
+}
+
+.container > div.info {
+    padding-top: 15%;
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-  }
+    background-color: #2C2E43;
+    color: #F4F4F9;
+    grid-area: info;
+}
+
+.container > div.info > div.avatar {
+    margin: 20% 0;
+    padding: 5%;
+}
+.container >div.info >div.socials{
+    
+}
+.socials img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    transition: transform 0.2s ease;
+}
+.avatar img {
+    width: 60%;
+    border-radius: 50%;
+    border-color: #3C4F76;
+}
+
+.container > div.header {
+    background-color: #3C4F76;
+    color: #F4F4F9;
+    grid-area: header;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 15px 0;
+}
+
+.container > div.projects {
+    padding: 3%;
+    background-color: #4F6D7A;
+    color: #F4F4F9;
+    grid-area: projects;
+    overflow-y: auto;
+    
+}
+
+.project {
+    background-color: #D6E6F2;
+    color: #1E1F2F;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.project:hover {
+    transform: scale(1.02);
+    background-color: #EDF6FF;
+}
